@@ -59,7 +59,7 @@ void walker_process()
 
         if (position > domain_size || position < -domain_size)
         {
-            break; /
+            break;
         }
     }
 
@@ -67,7 +67,6 @@ void walker_process()
 
     int done_signal = 1;
     MPI_Send(&done_signal, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
-
 }
 
 void controller_process()
@@ -78,10 +77,8 @@ void controller_process()
 
     for (int i = 0; i < num_walkers; i++)
     {
- 
         MPI_Recv(&msg, 1, MPI_INT, MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &status);
     }
+
     std::cout << "Controller: All " << num_walkers << " walkers have finished." << std::endl;
 }
-
-edit this little
